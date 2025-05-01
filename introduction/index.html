@@ -1,0 +1,129 @@
+<!-- 
+Interview Cheat Sheet
+
+How to tackle DSA style interviews
+
+
+- Step by Step approach through a problem
+
+1. When the interviewer asks the question, try to write it out plainly in your own words to aid understanding the contexts and naunces
+2. Double check by asking questions e.g what are the inputs or outputs? array, string?
+3. What is the most important value of the question
+4. Don't ask annoying questions
+5. Start with a naive solution - don't overthink the perfect solution just yet
+6. Walkthrough your thinking process out loud - this gives the interviewer the opportunity to know your thought process
+7. Upon arriving at a working naive solution, tell them about the improvements that can be made to the first solution
+8. Start coding and ensure to talk about each as you do
+9. Think about error checks
+10. Use proper variable names & modularity - break up code into smaller chunks and comment them properly
+11. Test your code
+12. Talk about further improvements
+
+
+
+- Good code checks
+
+[] It works
+[] Good use of data structures
+[] Code re-use / DRY
+[] Modularity
+[] Less O(N^2)
+[] Less space complexity
+
+
+- Heurestics to ace questions
+
+[] Hash Maps are usually the answer to solve for Time Complexities
+[] if it's a sorted array, use Binary tree to achieve O(log(n))
+[] Look at the Time vs Space tradeoffs
+
+
+And always remember: Communicate your thought process as much as possible. Don’t worry about
+finishing it fast. Every part of the interview matters.
+-->
+
+
+<!-- 
+
+1. Google Mock Interview
+
+* Rough 
+const x = [1,2,3,4,6,2]
+const y = [1,2,4,4,8,0]
+const sum = 8
+
+const hasPairSum = (arr, sum) => {
+
+let low = 0
+let high = arr.length - 1
+
+while(low < high){
+  low++
+  const s = arr[low] + arr[high]
+  if(s==sum){
+  return true
+  }
+  false
+}
+
+}
+
+hasPairSum(x,8)
+
+
+* Naive (o(n^2))
+const hasPairSum = (arr, sum) => {
+let len = arr.length
+  for(i=0; i<len-1, i++){
+     for(j=i+1, j<len, j++){
+      if(arr[i] + arr[j] === sum){
+       return true
+      }
+     } 
+  }
+      return false
+}
+
+* Better
+const hasPairSum = (arr, sum) => {
+ const set = new Set()
+ for(i=0; i<arr.length, i++){
+  if(set.has(arr[i])){
+     return true
+  }
+     set.add(sum-arr[i])
+ }
+    return false
+}
+
+
+2. ZTM Starter Algo
+
+// Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items
+//For Example:
+//const array1 = ['a', 'b', 'c', 'x'];//const array2 = ['z', 'y', 'i'];
+//should return false.
+//-----------
+//const array1 = ['a', 'b', 'c', 'x'];//const array2 = ['z', 'y', 'x'];
+//should return true.
+
+// 2 parameters - arrays - no size limit
+// return true or false
+
+
+* Naive (o(n^2))
+const hasSameElement = (arr1, arr2) => {
+
+  for(i=0; i<arr1.length, i++){
+     for(j=0, j<arr2.length, j++){
+      if(arr[i] === arr[j]){
+       return true
+      }
+     } 
+  }
+      return false
+}
+
+
+
+-->
