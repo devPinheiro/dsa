@@ -1,6 +1,55 @@
 <!-- 
 Interview Cheat Sheet
 
+
+
+#Big O Cheat Sheet:
+-Big Os
+
+O(1) Constant- no loops
+
+O(log N) Logarithmic- usually searching algorithms have log n if they are sorted (Binary Search)
+
+O(n) Linear- for loops, while loops through n items
+
+O(n log(n)) Log Liniear- usually sorting operations
+
+O(n^2) Quadratic- every element in a collection needs to be compared to ever other element. Two
+nested loops
+
+O(2^n) Exponential- recursive algorithms that solves a problem of size N
+
+O(n!) Factorial- you are adding a loop for every element
+
+Iterating through half a collection is still O(n)
+Two separate collections: O(a * b)
+
+-What can cause time in a function?-
+Operations (+, -, *, /)
+Comparisons (<, >, ==)
+Looping (for, while)
+Outside Function call (function())
+
+-Rule Book
+
+Rule 1: Always worst Case
+Rule 2: Remove Constants
+Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be
+O(a*b)
++ for steps in order
+* for nested steps
+Rule 4: Drop Non-dominant term
+
+
+-What causes Space complexity?
+
+Variables
+Data Structures
+Function Call
+Allocation
+
+
+
 How to tackle DSA style interviews
 
 
@@ -101,27 +150,62 @@ const hasPairSum = (arr, sum) => {
 
 // Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items
 //For Example:
-//const array1 = ['a', 'b', 'c', 'x'];//const array2 = ['z', 'y', 'i'];
+//const array1 = ['a', 'b', 'c', 'x'];
+//const array2 = ['z', 'y', 'i'];
 //should return false.
 //-----------
-//const array1 = ['a', 'b', 'c', 'x'];//const array2 = ['z', 'y', 'x'];
+//const array1 = ['a', 'b', 'c', 'x'];
+//const array2 = ['z', 'y', 'x'];
 //should return true.
 
 // 2 parameters - arrays - no size limit
 // return true or false
 
 
-* Naive (o(n^2))
+* Naive (O(n^2))
 const hasSameElement = (arr1, arr2) => {
 
   for(i=0; i<arr1.length, i++){
-     for(j=0, j<arr2.length, j++){
+     for(j=0, j<arr2.length; j++){
       if(arr[i] === arr[j]){
        return true
       }
      } 
   }
       return false
+}
+
+
+* Semi Native (O(a + b))
+
+const hasSameElement = (arr1, arr2) => {
+
+
+// create an object with arr1 element as key
+let map = {}
+for(i=0; i<arr1.length; i++){
+   if(!map[arr1[i]]){
+     map[arr1[i]] = true
+   }  
+}
+
+// loop through second array and check if same element exists in obj created above
+for(j=0; j<arr2.length; j++){
+ if(map[arr2[j]]){
+   return true
+}
+}
+
+return false
+
+}
+
+
+
+* Short Hand 
+
+const hasSameElement = (arr1, arr2) => {
+  return arr1.some(item => arr2.includes(item))
 }
 
 
