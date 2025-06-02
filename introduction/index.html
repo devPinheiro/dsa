@@ -123,8 +123,8 @@ hasPairSum(x,8)
 * Naive (o(n^2))
 const hasPairSum = (arr, sum) => {
 let len = arr.length
-  for(i=0; i<len-1, i++){
-     for(j=i+1, j<len, j++){
+  for(i=0; i<len-1; i++){
+     for(j=i+1; j<len; j++){
       if(arr[i] + arr[j] === sum){
        return true
       }
