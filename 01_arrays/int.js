@@ -5,23 +5,32 @@
  * e.g mergeSortedArray([0,2,4,6], [1,3,7,8,9])
  * result = [0,1,2,3,4,5,6,7,8,9]
  * 
+ * // naive
+
+// const mergeSortedArrayNaive = (arr1, arr2) => {
+//     let temp = []
+//    for (let i = 0; i < arr1.length-1; i++) {
+//       for (let j = 0; j < arr2.length; j++) {
+//         if(arr1[i]<arr2[j]){
+//           temp.push(arr1[i])
+//         } 
+//       }
+    
+//    }
+//    return temp
+// }
+
+const mergeSortedArrayNaive = (arr1, arr2) => {
+   let temp = []
+   let right = 0
+   let left = 0
+   while()
+   
+   
  */
 
 
-// naive
 
-const mergeSortedArrayNaive = (arr1, arr2) => {
-    let temp = []
-   for (let i = 0; i < arr1.length-1; i++) {
-      for (let j = 0; j < arr2.length; j++) {
-        if(arr1[i]<arr2[j]){
-          temp.push(arr1[i])
-        } 
-      }
-    
-   }
-   return temp
-}
 
 
 // modern and readable (sort method)
